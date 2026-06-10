@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Athena Dados V2 — Avaliacao Imobiliaria</title>
+    <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -42,6 +43,13 @@
               <path d="M3 21h18M5 21V7l8-4 6 4v14M9 9h1M9 13h1M9 17h1M14 9h1M14 13h1M14 17h1" />
             </svg>
             Base de imoveis
+          </button>
+          <button class="nav-item" data-view="buscar" type="button">
+            <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+            Buscar Imoveis
           </button>
           <button class="nav-item" data-view="relatorios" type="button">
             <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -299,6 +307,64 @@
             </div>
             <div class="property-grid" id="property-grid"></div>
           </section>
+        </section>
+
+        <section class="view" data-view-panel="buscar">
+          <h2 class="buscar-page-title">Buscar Imoveis</h2>
+
+          <section class="search-card buscar-card">
+            <div class="buscar-form" id="buscar-form">
+
+              <!-- Row 1: address + raio + resultados -->
+              <div class="buscar-inputs">
+                <input id="buscar-endereco" type="text" placeholder="Endereco" />
+                <input id="buscar-raio" type="number" placeholder="Raio em Km (Padrao: 30Km)" />
+                <select id="buscar-resultados">
+                  <option value="25">Numero de Resultados (Padrao: 25)</option>
+                  <option value="10">10 resultados</option>
+                  <option value="50">50 resultados</option>
+                  <option value="100">100 resultados</option>
+                </select>
+              </div>
+
+              <!-- Row 2: filter row inline -->
+              <div id="buscar-filtros" class="buscar-filtros">
+                <div class="filtro-row">
+                  <button class="btn-circ btn-circ-green" type="button" id="add-filtro" title="Adicionar filtro">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                  </button>
+                  <select class="filtro-atributo"><option value="">Atributo</option><option>Tipo</option><option>Bairro</option><option>Area (m²)</option><option>Quartos</option><option>Vagas</option><option>Preco</option></select>
+                  <select class="filtro-criterio"><option value="">Criterio</option><option>igual a</option><option>maior que</option><option>menor que</option><option>contem</option></select>
+                  <input class="filtro-valor" type="text" placeholder="Valor" />
+                  <button class="btn-circ btn-circ-orange" type="button" title="Remover linha">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+                  </button>
+                  <button class="btn-circ btn-circ-red" type="button" title="Deletar">
+                    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Row 3: pesquisar centered -->
+              <div class="buscar-actions">
+                <button class="btn-primary" type="button" id="btn-pesquisar">Pesquisar</button>
+              </div>
+
+            </div>
+          </section>
+
+          <div class="mapa-wrap">
+            <iframe
+              id="buscar-mapa"
+              width="100%"
+              height="460"
+              style="border:0;"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14674590!2d-51.9253!3d-14.2350!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1700000000000">
+            </iframe>
+          </div>
         </section>
 
         <section class="view" data-view-panel="relatorios">

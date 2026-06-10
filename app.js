@@ -108,6 +108,7 @@ const titles = {
   dashboard: "Painel / Avaliacao Imobiliaria",
   avaliacao: "Nova avaliacao / Athena Dados V2",
   imoveis: "Base de imoveis / Athena Dados V2",
+  buscar: "Buscar Imoveis / Athena Dados V2",
   relatorios: "Laudos / Athena Dados V2",
   clientes: "Clientes",
 };
