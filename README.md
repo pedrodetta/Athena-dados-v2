@@ -24,6 +24,9 @@ Depois acesse:
 
 ```text
 (http://localhost:8080)
+
+NETWORK: (http://192.168.10.126:8080)
+
 ```
 
 ## Proximos passos naturais
