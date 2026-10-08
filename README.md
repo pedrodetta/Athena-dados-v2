@@ -17,13 +17,13 @@ MVP de uma aplicacao SaaS para avaliacao imobiliaria, criado em HTML, CSS e Java
 Abra `index.html` diretamente no navegador ou use um servidor local:
 
 ```bash
-python3 -m http.server 4173
+cd "/Users/peterm.m/Desktop/AT D 2" && npm run dev
 ```
 
 Depois acesse:
 
 ```text
-http://localhost:4173
+(http://localhost:8080)
 ```
 
 ## Proximos passos naturais
